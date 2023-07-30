@@ -1,0 +1,14 @@
+<header class="header">
+  <h1 class="h1">{{ router.url === '/create' ? 'Создание города' : 'Список городов' }}</h1>
+</header>
+
+<nav class="nav" *ngIf="router.url !== '/create'">
+  <div>
+    <button class="btn" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Список</button>
+    <button class="btn" routerLink="/tile" routerLinkActive="active">Плитка</button>
+  </div>
+
+  <button class="btn-create" routerLink="/create">Создать</button>
+</nav>
+
+<router-outlet></router-outlet>
